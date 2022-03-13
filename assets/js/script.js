@@ -1,4 +1,10 @@
 // Assignment code here
+var passwordCriteria = function() {
+    
+}
+
+window.prompt("Would you like to?");
+
 
 
 // Get references to the #generate element
