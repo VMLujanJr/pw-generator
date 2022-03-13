@@ -301,7 +301,7 @@ var ourData = ourArray[1]; // equals 60
 console.log(ourData);
 
 var potentialCouple = [["Victor", 29, "00/00/0000"], ["July", 27, "00/00/0000"]]; // jaja bad example?
-var marriedCouple = potentialCouple[0] + potentialCouple[1];
+var marriedCouple = potentialCouple[0][0] + " loves " + potentialCouple[1][0];
 console.log(marriedCouple);
 
 var myArray = [50, 60, 70];
@@ -313,3 +313,80 @@ var ourList = [18, 64, 99];
 console.log(ourList); // checking 
 ourList[1] = 45; // ourList now equals [18, 45, 99]
 console.log(ourList); // checking again
+
+/* Access Multi-Dimensional Arrays w/ Indexes */
+var myList = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [[10, 11, 12], 13, 14]];
+
+var myData = myList[0][0]; // targets the first bracket "[1, 2, 3]" then targets 1 (because 1 = 0)
+console.log(myData);
+
+var myData = myList[2][1];
+console.log(myData);
+
+/* Manipulate Arrays w/ push() */
+var ourArray = ["Victor", "M", "Dogs"]; // example
+ourArray.push("Happy", "joy"); // equals to ["Victor", "M", "Dogs", "Happy", "joy"]
+console.log(ourArray);
+
+var ourArray = ["Victor", "M", "Dogs"]; // example 2
+ourArray.push(["Happy", "joy"]); // equals to ["Victor", "M", "Dogs", ["Happy", "joy"]]
+console.log(ourArray);
+
+var myArray = [["Victor", 29], ["July", 27]]; // example 3
+myArray.push(["Corgi", 0]);
+console.log(myArray);
+
+/* Manipulate Arrays w/ pop() */
+var ourArray = [1, 2, 3];
+var removedFromOurArray = ourArray.pop(); // equals to 3, and ourArray now equals [1, 2]
+console.log(ourArray);
+console.log(removedFromOurArray);
+
+var myArray = [["John", 23], ["cat", 2]];
+
+var removedFromMyArray = myArray.pop(); // equals to ["cat", 2], and myArray now equals ["John", 23]
+console.log(myArray);
+console.log(removedFromMyArray);
+
+/* Manipulate Arrays w/ shift() */
+var myList = ["Apples", "Oranges", ["Lettuce"]];
+var removeFirstArray = myList.shift(); // targets 1st array
+console.log(myList);
+console.log(removeFirstArray);
+
+/* Manipulate Arrays w/ unshift() */
+var ourList = ["Pencils", "Pens", ["Markers"]];
+ourList.shift(); // removes ["Pencils"]
+console.log(ourList);
+ourList.unshift("Watercolors"); // equals ["Watercolors", "Pens", ["Markers"]]
+console.log(ourList);
+
+/* Shopping List */
+var myShoppingList = [["cereal", 3], ["milk", 2], ["bananas", 3], ["juice", 2], ["eggs", 12]];
+
+/* Write Reusable Code w/ Functions */
+function ourReusableCode() { // example
+    console.log("Hello there!");
+}
+
+ourReusableCode();
+ourReusableCode();
+
+function ourKarate() {
+    console.log("Karate chop!");
+}
+
+ourKarate();
+ourKarate();
+ourKarate();
+
+/* Passing Values to Functions w/ Arguments */
+function ourFunctionWithArgs(a, b) { // Args is short for Arguments
+    console.log(a - b) // 10 - 5 = 5
+}
+ourFunctionWithArgs(10, 5); // injects values to a and b
+
+function functionNumber2(a, b, c) { // example 2
+    console.log((a + b) - c);
+}
+functionNumber2(10, 5, 3);
