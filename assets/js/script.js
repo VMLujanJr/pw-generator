@@ -1,7 +1,11 @@
 // Assignment code here
+var characterLength = function() {
+    window.prompt("Password must contain at least 8 characters.");
+};
+
 var passwordCriteria = function() {
     
-}
+};
 
 window.prompt("Would you like to?");
 
