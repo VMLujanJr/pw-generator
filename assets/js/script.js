@@ -79,4 +79,28 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+// *****************
+//  Randomize Arrays
+// *****************
+
+var randomIntegers = integers[Math.floor(Math.random() * integers.length)];
+
+console.log(randomIntegers);
+
+var randomAlphabet = function () {
+  var zeroToTwentyFive = alphabet.length;
+  var zeroToOne = [0, 1];
+  //console.log(zeroToTwentyFive + "working");
+
+  var randomZeroTwentyFive = [Math.floor(Math.random() * zeroToTwentyFive)];
+  var randomZeroOne = [Math.floor(Math.random() * zeroToOne.length)];
+  console.log(randomZeroTwentyFive);
+  console.log(randomZeroOne);
+
+  
+}
+
+console.log(randomAlphabet());
+
+
 initializeGenerator();
