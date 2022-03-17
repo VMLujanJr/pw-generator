@@ -1,64 +1,14 @@
-var initializeGenerator = function() {
-  
-  window.alert("Welcome to your Password Generator!\n\nLet's make a 💪 & 🔐 password!");
-  
-  window.alert("You have the option to include:\n - UPPERCASE letters\n - lowercase letters\n - Numbers\n - Symbols");
-
-  var readyToStart = window.prompt("Are you ready to start? Type 'Yes' or 'No'");
-
-  if (readyToStart) {
-
+var generatePassword = function() {
+  if (password === "" || password === null) {
+    window.alert = ("Welcome to your Password Generator!\n\nLet's make a 💪 & 🔐 password!");
   }
-};
+}
+var pass = [];
 
-// ****************
-//  LIST OF ARRAYS
-// ****************
-
-/* ALPHABET: Upper & Lower Case */
-var alphabet = [
-  ["A", "a"],
-  ["B", "b"],
-  ["C", "c"],
-  ["D", "d"],
-  ["E", "e"],
-  ["F", "f"],
-  ["G", "g"],
-  ["H", "h"],
-  ["I", "i"],
-  ["J", "j"],
-  ["K", "k"],
-  ["L", "l"],
-  ["M", "m"],
-  ["N", "n"],
-  ["O", "o"],
-  ["P", "p"],
-  ["Q", "q"],
-  ["R", "r"],
-  ["S", "s"],
-  ["T", "t"],
-  ["U", "u"],
-  ["V", "v"],
-  ["W", "w"],
-  ["X", "x"],
-  ["Y", "y"],
-  ["Z", "z"]
-];
-console.log(alphabet.length); // returns 26
-console.log(alphabet.length - 1); // returns 25, array starts at 0
-
-var displayAlphabet = alphabet[0][1]; // example
-console.log(displayAlphabet); // returns upper case A
-
-/* INTEGERS: 0 - 9 */
-var integers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-console.log(integers.length); // returns 10
-console.log(integers.length - 1); // returns 9, array starts at 0
-
-/* SYMBOLS: !@#$%^&* */
-var symbols = ["!", "@", "#", "$", "%", "^", "&", "*"];
-console.log(symbols.length); // returns 8
-console.log(symbols.length - 1); // returns 7, array starts at 0
+for (var randomLow = 0; randomLow < 8; randomLow++) {
+    pass.push(randomLow);
+}
+console.log(pass);
 
 // ************************
 // DO NOT CHANGE CODE BELOW
@@ -79,28 +29,24 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-// *****************
-//  Randomize Arrays
-// *****************
+// *********************
+// VARIABLE DECLARATIONS
+// *********************
+var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v","w", "x","y", "z"];
+var upperCase = ["A", "B", "C", "D", "E", "F","G", "H", "I", "J", "K", "L", "M", "N", "O", "P","Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var integers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+var symbols = ["!", "@", "#", "$", "%", "^", "&", "*"];
 
-var randomIntegers = integers[Math.floor(Math.random() * integers.length)];
+// *********************
+// RANDOM GENERATORS
+// *********************
+var randomLow = lowerCase[Math.floor(Math.random() * lowerCase.length)];
+console.log(randomLow);
+var randomUpp = upperCase[Math.floor(Math.random() * upperCase.length)];
+console.log(randomUpp);
+var randomInt = integers[Math.floor(Math.random() * integers.length)];
+console.log(randomInt);
+var randomSym = symbols[Math.floor(Math.random() * symbols.length)];
+console.log(randomSym);
 
-console.log(randomIntegers);
-
-var randomAlphabet = function () {
-  var zeroToTwentyFive = alphabet.length;
-  var zeroToOne = [0, 1];
-  //console.log(zeroToTwentyFive + "working");
-
-  var randomZeroTwentyFive = [Math.floor(Math.random() * zeroToTwentyFive)];
-  var randomZeroOne = [Math.floor(Math.random() * zeroToOne.length)];
-  console.log(randomZeroTwentyFive);
-  console.log(randomZeroOne);
-
-  
-}
-
-console.log(randomAlphabet());
-
-
-initializeGenerator();
+generatePassword();
